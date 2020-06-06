@@ -1,0 +1,6 @@
+[submodule "libnoise"]
+	path = libnoise
+	url = https://github.com/qknight/libnoise.git
+[submodule "SDL2"]
+	path = SDL2
+	url = https://github.com/davidsiaw/SDL2.git
