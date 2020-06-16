@@ -69,7 +69,7 @@ void World::generate(){
 void World::erode(int cycles){
 
   //Track the Movement of all Particles
-  bool track[dim.x*dim.y] = {false};
+  std::vector<bool> track(dim.x * dim.y, false);
 
   //Do a series of iterations!
   for(int i = 0; i < cycles; i++){

@@ -1,3 +1,5 @@
+
+
 namespace image {
 
   SDL_Surface* load(std::string path){
@@ -5,7 +7,7 @@ namespace image {
     if(loaded == NULL)
       printf( "Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError() );
     SDL_Surface* optimized = SDL_ConvertSurfaceFormat(loaded, SDL_PIXELFORMAT_RGBA32, 0);
-    SDL_FreeSurface(loaded);
+    //SDL_FreeSurface(loaded);
     return optimized;
   }
 

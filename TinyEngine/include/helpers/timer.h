@@ -1,6 +1,6 @@
 #include <chrono>
 #include <thread>
-
+#include <atomic>
 namespace timer{
 
   template<typename D, typename F, typename... Args>

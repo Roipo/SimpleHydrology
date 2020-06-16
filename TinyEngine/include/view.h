@@ -37,8 +37,8 @@ bool View::init(std::string _name, int _width, int _height){
 
   //Initialize OPENGL Stuff
 	SDL_GL_SetSwapInterval(vsync);
-	glewExperimental = GL_TRUE;
-	glewInit();
+	bool err = gladLoadGL() == 0;
+
 
   //Setup the Guy
   IMGUI_CHECKVERSION();

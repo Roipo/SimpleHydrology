@@ -24,7 +24,7 @@ struct Drop{
   const double volumeFactor = 100.0; //"Water Deposition Rate"
 
   //Sedimenation Process
-  void descend(double* h, double* path, double* pool, bool* track, double* pd, glm::ivec2 dim, double scale);
+  void descend(double* h, double* path, double* pool, std::vector<bool>& track, double* pd, glm::ivec2 dim, double scale);
   void flood(double* h, double* pool, glm::ivec2 dim);
 };
 
@@ -41,7 +41,7 @@ glm::vec3 surfaceNormal(int index, double* h, glm::ivec2 dim, double scale){
   return glm::normalize(n);
 }
 
-void Drop::descend(double* h, double* p, double* b, bool* track, double* pd, glm::ivec2 dim, double scale){
+void Drop::descend(double* h, double* p, double* b, std::vector<bool> &track, double* pd, glm::ivec2 dim, double scale){
 
   glm::ivec2 ipos;
 
@@ -117,7 +117,8 @@ void Drop::flood(double* h, double* p, glm::ivec2 dim){
 
     set.clear();
     int size = dim.x*dim.y;
-    bool tried[size] = {false};
+    std::vector<bool> tried(size,false);
+
 
     int drain;
     bool drainfound = false;

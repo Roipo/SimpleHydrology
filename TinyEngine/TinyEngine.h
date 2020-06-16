@@ -1,28 +1,33 @@
 #include <functional>
-using Handle = std::function<void()>;
 #include <initializer_list>
+#include <string>
+
+using Handle = std::function<void()>;
+
 using slist = std::initializer_list<std::string>;
 
 //Interface Dependencies (DearImGUI)
 #include "include/imgui/imgui.h"
 #include "include/imgui/imgui_impl_sdl.h"
 #include "include/imgui/imgui_impl_opengl3.h"
+#define SDL_MAIN_HANDLED
 
 //Drawing Dependencies
-#include <GL/glew.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <glm/glm.hpp>
-#include "glm/gtc/matrix_transform.hpp"
+#include <glm/gtc/matrix_transform.hpp>
 
 //File IO
 #include <sstream>
 #include <iostream>
 #include <fstream>
-#include <boost/filesystem/operations.hpp>
-#include <boost/filesystem/path.hpp>
+// #include <boost/filesystem/operations.hpp>
+// #include <boost/filesystem/path.hpp>
 
 //Helpers
 #include "include/helpers/helper.h"
@@ -33,16 +38,16 @@ using slist = std::initializer_list<std::string>;
 #include "include/helpers/timer.h"
 
 //Utility Classes for the Engine
-#include "include/utility/texture.cpp"
-#include "include/utility/shader.cpp"
-#include "include/utility/sprite.cpp"
-#include "include/utility/particle.cpp"
-#include "include/utility/billboard.cpp"
-#include "include/utility/model.cpp"
+#include "include/utility/texture.h"
+#include "include/utility/shader.h"
+#include "include/utility/sprite.h"
+#include "include/utility/particle.h"
+#include "include/utility/billboard.h"
+#include "include/utility/model.h"
 
-#include "include/view.cpp"
-#include "include/event.cpp"
-#include "include/audio.cpp"
+#include "include/view.h"
+#include "include/event.h"
+#include "include/audio.h"
 
 /* TINY ENGINE */
 

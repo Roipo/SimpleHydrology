@@ -2,7 +2,7 @@
 #include <noise/noise.h>
 #include "source/world.h" //Model
 
-int main( int argc, char* args[] ) {
+int main( int argc, char* args[]) {
 
   if(argc == 2)
     world.SEED = std::stoi(args[1]);

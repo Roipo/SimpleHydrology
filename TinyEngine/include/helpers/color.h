@@ -1,3 +1,6 @@
+#include <vector>
+#include <glm/common.hpp>
+
 using colorscheme = std::vector<glm::vec4>;
 
 namespace color{

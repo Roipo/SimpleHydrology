@@ -1,3 +1,5 @@
+#include<deque>
+
 class Event{
 private:
   SDL_Event in;

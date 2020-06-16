@@ -1,3 +1,7 @@
+#pragma once
+#include <filesystem>
+
+
 class Shader{
 public:
   Shader(std::string vs, std::string fs, slist _list){
@@ -39,7 +43,7 @@ public:
 void Shader::setup(std::string vs, std::string fs){
   shaderProgram = glCreateProgram();  //Generate Shader
   
-  boost::filesystem::path data_dir(boost::filesystem::current_path());
+  std::filesystem::path data_dir(std::filesystem::current_path());
   vertexShader   = addProgram((data_dir/vs).string(), GL_VERTEX_SHADER);
   fragmentShader = addProgram((data_dir/fs).string(), GL_FRAGMENT_SHADER);
 }
